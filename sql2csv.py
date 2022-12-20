@@ -10,6 +10,7 @@ query = 'select * from tablename'
 
 mycursor.execute(query)
 dfRecord=pd.DataFrame(mycursor.fetchall()) #note: by default fetchall() loads data into tuple here we are storing it into DataFrame
+# dfRecord=pd.DataFrame(mycursor.fetchall(),columns=['col1','col2','col3','col4','col5']) You can set the column index name in the same line
 db.commit()
 print("Successfully Read the table data")
 dfRecord.rename(columns={0:'col1',1:'col2',2:'col3',3:'col4',4:'col5',5:'col6',6:'col7'},inplace=True) #Renaming the columns by applying inplace
